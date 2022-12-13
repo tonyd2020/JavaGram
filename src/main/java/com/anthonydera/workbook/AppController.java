@@ -30,7 +30,6 @@ public class AppController {
             System.out.println(result.toString());
             return "sign-up";
         }
-        System.out.println(user.toString());
         this.user = user;
 
         return "redirect:/result";

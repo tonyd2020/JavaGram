@@ -19,6 +19,7 @@ public class User {
     @Size(min = 2, message = "Last name is too short")
     private String lastName;
 
+    @Username(message = "Cannot contain special characters or uppercase characters ")
     @NotBlank(message = "Username cannot be blank")
     @Size(min = 7, message = "Username must have at least 7 characters")
     private String userName;
@@ -27,8 +28,10 @@ public class User {
     @Email
     private String email;
 
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Past(message = "DoB must be in the past")
+    @Age(message = "Must be at least 18")
     private Date dateOfBirth;
 
     //Generate a complete constructor.

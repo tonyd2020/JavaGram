@@ -26,7 +26,10 @@ public class AppController {
 
     @PostMapping("/submitItem")
     public String handleSubmit(@Valid User user, BindingResult result){
-        if(result.hasErrors()) return "sign-up";
+        if(result.hasErrors()) {
+            System.out.println(result.toString());
+            return "sign-up";
+        }
         System.out.println(user.toString());
         this.user = user;
 
